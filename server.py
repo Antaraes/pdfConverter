@@ -87,7 +87,7 @@ def generate_json():
         # pageId = pageId + 1
         contents.append(content)
     compressed_content = compress_content_entries(contents)
-    insertResponse = supabase.table('BookContent').insert(contents).execute()
+    insertResponse = supabase.table('BookContent').insert(compressed_content).execute()
 
     pdf_document.close()
 
